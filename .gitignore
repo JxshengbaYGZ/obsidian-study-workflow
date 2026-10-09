@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+.DS_Store
+.kb/
+demo-output/
+examples/portable-demo/review.json
+examples/portable-demo/evidence/

@@ -1,0 +1,4 @@
+interface:
+  display_name: "教材库整理"
+  short_description: "把扫描教材整理成可检索、可回查页码、与笔记互链的教材库，服务考研复习与期末查书"
+  default_prompt: "使用 $textbook-library 整理这本扫描教材：先定页码口径，再转写、对齐、生成底稿、提取图版并确认页码，最后建知识点卡、索引和与笔记的双向链接，通过全部门禁后再安装。"

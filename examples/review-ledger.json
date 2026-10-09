@@ -1,0 +1,8 @@
+{
+  "scope": "自编示例：一项完成，一项原稿待补证",
+  "expected_ids": ["example-1", "example-2"],
+  "items": [
+    {"id":"example-1","kind":"question","source_kind":"authored","status":"verified","source_check":"not_applicable","semantic_check":"passed","evidence":["自编题2+3，独立按整数加法核算为5。"],"reason":"演示已核定记录，不冒充课程题"},
+    {"id":"example-2","kind":"question","source_kind":"scan","status":"pending","source_check":"unclear","semantic_check":"blocked","evidence":["虚构流程示例：上限符号被遮挡。"],"reason":"需补清晰原稿，本例没有真实扫描文件"}
+  ]
+}
