@@ -13,6 +13,7 @@
 | 控制模型调用与返工 | [按页分流与费用记录](docs/low-cost-textbook-transcription.md) |
 | 运行虚构小样 | [便携小样](examples/portable-demo/README.md) |
 | 既有知识库重构、内容纠错与增量迁移 | [重构与分层验收](docs/vault-refactor-and-verification.md) |
+| 短文件名、直接浏览、重复导航和原始剪藏退役 | [课程入口与来源清理](docs/direct-browsing-and-source-retirement.md) |
 | 全量检查内部链接、锚点、附件与重复 | [只读结构审计工具](docs/vault-audit.md) |
 | 比较原作者的外部工作流候选 | [GitHub 来源核查](docs/github-reuse-2026-10.md) |
 
