@@ -1,0 +1,4 @@
+interface:
+  display_name: "实验报告整理"
+  short_description: "依据模板、原始数据、代码与截图完成并逐页核验实验报告"
+  default_prompt: "Use $complete-lab-report to complete my lab report from the template, code, data and screenshots, leaving unknown fields blank."
