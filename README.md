@@ -8,6 +8,7 @@
 |---|---|
 | 学校课程：教材与笔记双向对应 | [学校课程工作流](docs/school-course-workflow.md) |
 | 单个 Clipping、课件或教材持续补一张卡 | [多来源增补方法](docs/incremental-source-completion.md) |
+| 课程有成套字幕和课件，按讲次重构知识卡 | [课程字幕主线重构](docs/school-course-workflow.md#课程专题有完整字幕和课件时按讲次重构知识卡) |
 | 扫描教材：原页、正文、图和知识点 | [教材库流程](docs/textbook-library.md) · [Skill](skills/textbook-library/SKILL.md) |
 | 笔记、题目、字幕：来源与独立复核 | [知识库流程](docs/workflow.md) · [Skill](skills/study-knowledge-base/SKILL.md) |
 | 控制模型调用与返工 | [按页分流与费用记录](docs/low-cost-textbook-transcription.md) |
