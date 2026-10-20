@@ -12,6 +12,9 @@ def inspect(text):
     text = re.sub(r'`[^`\n]*`', '', text)
     opened = None
     formulas, errors = [], []
+    for html_table in re.finditer(r'<table\b[^>]*>[\s\S]*?</table>', text, re.I):
+        if re.search(r'(?<!\\)\$|\\(?:frac|sqrt|omega|delta|sigma|pi|mathrm|sum|int)\b', html_table[0]):
+            errors.append('HTML表格内含未渲染公式：改用Markdown表格或必要的清晰局部表图')
     for token in re.finditer(r'(?<!\\)(\$\$|\$)', text):
         if opened is None:
             opened = token

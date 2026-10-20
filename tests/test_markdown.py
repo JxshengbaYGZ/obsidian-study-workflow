@@ -21,3 +21,11 @@ class MarkdownTests(unittest.TestCase):
 
     def test_code_and_escaped_dollar(self):
         self.assertFalse(module.inspect('```\n$$\n```\n`$` \\$5')[0])
+
+    def test_html_math_table_is_rejected(self):
+        errors,_=module.inspect('<table><tr><td>$x^2$</td></tr></table>')
+        self.assertTrue(any('HTML表格' in x for x in errors))
+
+    def test_markdown_math_table_and_plain_html_are_allowed(self):
+        self.assertFalse(module.inspect('| 值 |\n| --- |\n| $x^2$ |')[0])
+        self.assertFalse(module.inspect('<table><tr><td>文字</td></tr></table>')[0])
