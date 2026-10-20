@@ -18,6 +18,9 @@
 | 课程字幕和课件为主线、教材作辅助索引 | [按课程顺序学习的目录约束](docs/course-first-learning-index.md) |
 | 全量检查内部链接、锚点、附件与重复 | [只读结构审计工具](docs/vault-audit.md) |
 | 比较原作者的外部工作流候选 | [GitHub 来源核查](docs/github-reuse-2026-10.md) |
+| 知识卡/题卡：整页图、重复图与图文冗余 | [图文去冗余清理](docs/card-redundancy-cleanup.md) |
+| 正文里的整理过程话术、批次状态与教学口吻 | [整理话术清理分层](docs/editorial-phrase-cleanup.md) |
+| 批量删除/替换/改链接后的验收报告 | [批量清理的验收](docs/validation-batch-cleanup.md) |
 
 ## 最小流程
 
