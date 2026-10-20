@@ -3,7 +3,7 @@ import argparse, contextlib, hashlib, json, os, re, shutil, sys, tempfile
 from pathlib import Path
 import check_markdown, check_tex_hygiene, check_fragments
 
-VERSION = '1.0'
+VERSION = '1.1'
 KINDS = {'topic': '笔记', 'question': '题', 'tip': '技巧'}
 
 def sha(data): return hashlib.sha256(data).hexdigest()
@@ -74,6 +74,8 @@ class Project:
             need(item.get('provenance') in ['original','authored'],'缺provenance：'+key)
             need(item.get('state') in ['ready','pending'],'state须为ready或pending：'+key)
             refs=item.get('source_ids');need(isinstance(refs,list) and all(x in self.sources for x in refs),'来源id缺失：'+key)
+            display=item.get('display_source_ids',[])
+            need(isinstance(display,list) and all(isinstance(x,str) for x in display) and len(display)==len(set(display)) and all(x in refs and self.sources[x]['kind']=='image' for x in display),'display_source_ids须为来源中的不重复局部图id：'+key)
             need(item['provenance']=='authored' or bool(refs),'来源派生条目不能没有来源：'+key)
             if item['state']=='pending':need(nonempty(item.get('reason')),'待核项必须说明下一步缺什么：'+key)
             if item['kind']=='question' and item['state']=='ready':need(nonempty(item.get('statement')),'题目须指定冻结题干文件：'+key)
@@ -138,18 +140,17 @@ class Project:
             bodies[key]={'parts':parts,'statement':statement}
             pending=item['state']=='pending'
             title=item['title'] if not pending else '待核材料：'+key
+            if not pending and item['kind']=='question' and item['provenance']=='authored' and '自编' not in title:title+='（自编）'
             text='# '+title+'\n\n'
-            if pending:text+='> [!warning] 待核\n> 请查看保留的原始资料。自动转写和解答尚未核定，未在此展示。\n\n'
+            if pending:text+='> [!warning] 待核\n'+ '\n'.join('> '+line for line in item['reason'].splitlines())+'\n\n'
             elif item['kind']=='question':
                 text+='## 题目\n\n'+statement+'\n\n> [!example]- 标准解答\n'
                 text+='\n'.join('> '+line for line in parts['answer'].split('\n'))+'\n\n## 方法与易错点\n\n'+parts['method']+'\n\n'
             else:text+=parts['body']+'\n\n'
-            if item['provenance']=='authored':text+='来源身份：整理者补充或自编，非原稿逐字内容。\n\n'
-            if item['source_ids']:text+='## 来源\n\n'
-            for source_id in item['source_ids']:
-                s=self.sources[source_id];link='../'+source_outputs[source_id]
-                text+=('![]('+link+')\n\n' if s['kind']=='image' else '')
-                text+='- ['+('查看原图' if s['kind']=='image' else '查看来源')+']('+link+')：'+s['location']+'\n'
+            # 来源归档与卡片展示分别控制；仅嵌入人工选定的必要局部图。
+            display=item.get('display_source_ids',[x for x in item['source_ids'] if pending and self.sources[x]['kind']=='image'])
+            for source_id in display:
+                text+='![](../'+source_outputs[source_id]+')\n\n'
             if not pending and edges[key]:
                 text+='\n## 关联内容\n\n'
                 for target,reason in dict.fromkeys(edges[key]):

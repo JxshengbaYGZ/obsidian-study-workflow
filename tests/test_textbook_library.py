@@ -99,10 +99,10 @@ class TextbookLibraryTests(unittest.TestCase):
         res = self.run_check()
         self.assertTrue(any('没有图片嵌入' in m for m in res.fails))
 
-    def test_card_requires_source_section(self):
-        self.write(os.path.join(self.book, '知识点', '示例概念.md'), CARD.replace('## 来源', '## 说明'))
+    def test_card_does_not_require_visible_source_section(self):
+        self.write(os.path.join(self.book, '知识点', '示例概念.md'), '# 示例概念\n\n定义、条件与方法。\n')
         res = self.run_check()
-        self.assertTrue(any('## 来源' in m for m in res.fails))
+        self.assertEqual([], res.fails)
 
     def test_card_must_be_listed_in_index(self):
         self.write(os.path.join(self.book, '00-知识点索引.md'), '# 演示书\n')

@@ -89,8 +89,7 @@ def check_cards(book, res, root):
         h1 = [l for l in body.split('\n') if l.startswith('# ')]
         if len(h1) != 1 or h1[0][2:].strip() != f[:-3]:
             res.fail('%s/知识点/%s 的 H1 必须是文件名本身（单个一级标题）' % (book, f))
-        if '## 来源' not in body:
-            res.fail('%s/知识点/%s 缺少 ## 来源 小节' % (book, f))
+        # 简洁卡片不要求展示来源栏目；来源位置由后台记录保存。
         if f[:-3] not in text:
             res.fail('%s 的索引里没有卡片：%s' % (book, f[:-3]))
         for image in EMBED.finditer(body):

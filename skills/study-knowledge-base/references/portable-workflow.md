@@ -37,16 +37,18 @@ python skills/study-knowledge-base/scripts/kb.py status batch
   "sources":[{"id":"src1","path":"sources/q1.png","kind":"image","location":"原卷.pdf，PDF物理第2页，第三题"}],
   "items":[
     {"id":"concept","kind":"topic","title":"自然知识点标题","provenance":"authored","state":"ready","source_ids":[]},
-    {"id":"exercise","kind":"question","title":"自然题目标题","provenance":"original","state":"ready","source_ids":["src1"],"statement":"statements/exercise.md","related":[{"id":"concept","reason":"用该定义检查此题的条件"}]}
+    {"id":"exercise","kind":"question","title":"自然题目标题","provenance":"original","state":"ready","source_ids":["src1"],"display_source_ids":["src1"],"statement":"statements/exercise.md","related":[{"id":"concept","reason":"用该定义检查此题的条件"}]}
   ],
   "learning_order":["concept"]
 }
 ```
 
+- `source_ids` 用于后台归档，不自动展示。`display_source_ids` 只列确有必要展示的完整局部图id，且必须属于本条来源；默认空列表，不输出来源标题、页码入口或纯文字截图。待核条目未指定时展示来源图以便辨认。
+- `source_ids` 用于后台归档，不自动展示。`display_source_ids` 只列确有必要展示的完整局部图id，且必须属于本条来源；默认空列表，不输出来源标题、页码入口或纯文字截图。待核条目未指定时展示来源图以便辨认。
 - 来源类型：`image/text/pdf/transcript`。图像必须实际打开；PDF 扫描题须逐题裁图，不能只给整卷链接。题干与图形、可能影响条件的手写补充都需看清；原作答保留图，不强行解释重叠笔迹。
 - 可用 `prepare_source.py 原卷.pdf --page 2 --rect 0.05 0.20 0.95 0.45 --output batch/sources/q1.png` 裁图。坐标为归一化边界，页码为物理页；邻接 `.source.json` 记录原文件摘要与坐标。裁到 PDF 边缘不证明原纸完整。
 - 文本/字幕来源应是实际完整相关段落，保存时间戳/页码和前后文；OCR 文本需与原图同时保存。程序不代替 OCR，也不会猜图形条件。
-- `provenance=original` 必须有来源；`authored` 表示整理者补充/自编，不能包装成原稿。知识点综合了原文与补充时，在正文分别标明；关联关系不能只写“相关”。
+- `provenance=original` 必须有来源；`authored` 表示整理者补充/自编，不能包装成原稿。来源身份与贡献范围记在plan和审查记录中，默认不写入卡片正文；自编题只简标“自编”。关联关系需要有实际用途。
 - `learning_order` 按前置关系完整列本批知识点。对清单逐项记录已收录、重复、待补证、无独立内容或未审查；计划外材料不算已处理。现有程序只检查已声明计划，不能证明你已通读全部原材料。
 - 待补证条目用 `state=pending`、`reason` 和原始来源。它只展示中性标题和原图，不发布猜测题干/答案；复核记录给出具体下一步。发现题干问题应保留原题，不静默补条件。
 

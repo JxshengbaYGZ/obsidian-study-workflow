@@ -1,4 +1,4 @@
 interface:
   display_name: "长期知识库整理"
-  short_description: "将原稿、笔记和题目整理为可追溯、可验证、面向学习与工作的知识资产"
-  default_prompt: "使用 $study-knowledge-base 整理或审查我的知识库，保留完整内容，连接知识点、题目、解答与原图，并保存审查及模型交接记录。"
+  short_description: "审查与精简知识卡和题卡，保留必要知识、条件、推导及局部图形"
+  default_prompt: "使用 $study-knowledge-base 先审查再精简我的知识库，正文只留知识和必要图形，来源记后台。"

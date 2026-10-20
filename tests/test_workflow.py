@@ -69,9 +69,30 @@ class WorkflowTests(unittest.TestCase):
         p=kb.Project(root);p.freeze();b=p.build()
         text=(Path(b['stage'])/'题/q2.md').read_text(encoding='utf-8')
         self.assertNotIn('错误转写',text);self.assertNotIn('猜测标题',text)
-    def test_declared_page_preserved(self):
+    def test_source_retained_without_visible_page_boilerplate(self):
         b=self.p.build();text=(Path(b['stage'])/'笔记/t1.md').read_text(encoding='utf-8')
-        self.assertIn('第12页',text)
+        self.assertNotIn('第12页',text)
+        self.assertNotIn('## 来源',text)
+        self.assertTrue(list((Path(b['stage'])/'原始资料').glob('s1-*')))
+        self.assertEqual(kb.read(self.root/'plan.json')['sources'][0]['location'],'教材第12页，第2段')
+    def test_only_explicitly_selected_figure_is_displayed(self):
+        for i in ['s2','s3']:
+            self.plan['sources'].append({'id':i,'path':i+'.png','kind':'image','location':'原图位置'})
+            kb.write(self.root/(i+'.png'),b'image fixture')
+        self.plan['items'][0]['source_ids']+=['s2','s3']
+        self.plan['items'][0]['display_source_ids']=['s2']
+        kb.write(self.root/'plan.json',self.plan)
+        # 计划变化采用新冻结状态，仅在独立测试夹具中重建。
+        (self.root/'.kb/frozen.json').unlink()
+        p=kb.Project(self.root);p.freeze();b=p.build()
+        text=(Path(b['stage'])/'笔记/t1.md').read_text(encoding='utf-8')
+        self.assertIn('s2-',text);self.assertNotIn('s3-',text)
+        self.assertEqual(text.count('![]('),1)
+        self.assertNotIn('来源身份',text)
+    def test_invalid_display_source_is_rejected(self):
+        self.plan['items'][0]['display_source_ids']=['s1']
+        kb.write(self.root/'plan.json',self.plan)
+        with self.assertRaises(ValueError):kb.Project(self.root)
     def test_new_batch_updates_owned_file_with_backup(self):
         self.approve();self.p.publish();root=self.base/'second';kb.init(root,self.out,'second',None)
         plan={'sources':[],'items':[{'id':'t1','kind':'topic','title':'集合','provenance':'authored','state':'ready','source_ids':[]}],'learning_order':['t1']}
