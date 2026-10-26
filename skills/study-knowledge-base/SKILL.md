@@ -31,4 +31,5 @@ description: 将笔记、教材、字幕和题目整理为简洁知识卡，或�
 - 写卡片：[简洁模板](references/project-setup.md)。
 - 恢复长任务：[执行约定](references/execution.md)；记录字段见[记录与检查](references/records-and-quality.md)。
 - 需要冻结输入、版本审查和可恢复发布时，才用[批处理脚本](references/portable-workflow.md)。默认不自动展示来源；必要局部图通过 `display_source_ids` 指定。
+- 需要把现有知识卡与题库用于主动练习时，按[可回源练习与掌握判定](../../docs/grounded-practice-loop.md)记录首次独立作答、具体错因和复做结果；只把经核定的知识修订回写权威卡。
 - 有专业争议时读[审查规则](references/review.md)；需要交接时读[分工](references/model-routing.md)。
