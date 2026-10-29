@@ -13,6 +13,7 @@
 | 笔记、题目、字幕：来源与独立复核 | [知识库流程](docs/workflow.md) · [Skill](skills/study-knowledge-base/SKILL.md) |
 | 控制模型调用与返工 | [按页分流与费用记录](docs/low-cost-textbook-transcription.md) |
 | 运行虚构小样 | [便携小样](examples/portable-demo/README.md) |
+| 已有知识卡表达优化、递进重写与分类覆盖 | [内容保全与递进重写](docs/learning-note-rewrite.md) |
 | 既有知识库重构、内容纠错与增量迁移 | [重构与分层验收](docs/vault-refactor-and-verification.md) |
 | 短文件名、直接浏览、重复导航和原始剪藏退役 | [课程入口与来源清理](docs/direct-browsing-and-source-retirement.md) |
 | 课程字幕和课件为主线、教材作辅助索引 | [按课程顺序学习的目录约束](docs/course-first-learning-index.md) |
