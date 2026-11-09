@@ -1,4 +1,4 @@
 interface:
-  display_name: "长期知识库整理"
-  short_description: "审查与精简知识卡和题卡，保留必要知识、条件、推导及局部图形"
-  default_prompt: "使用 $study-knowledge-base 先审查再精简我的知识库，正文只留知识和必要图形，来源记后台。"
+  display_name: "学习笔记整理"
+  short_description: "保全有效知识，按对象组织学习主线，讲清概念、关键推导与公式条件"
+  default_prompt: "使用 $study-knowledge-base 按统一准则整理指定笔记，改善概念解释、推理衔接和可读性，保留有效知识与来源图题。"

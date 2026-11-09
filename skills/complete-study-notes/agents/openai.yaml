@@ -1,0 +1,4 @@
+interface:
+  display_name: "完整学习笔记"
+  short_description: "补足课程笔记的概念解释与推理衔接，按统一准则改善连续自学体验"
+  default_prompt: "使用 $complete-study-notes 重构指定课程笔记，先讲清概念，再连通模型、推导与公式用法，不新增自编题或自测。"

@@ -2,13 +2,17 @@
 
 把教材、课程笔记、视频字幕和练习整理成打开就能学的简洁 Obsidian 知识库。本仓库只提供通用流程、检查脚本和虚构小样；不收录任何人的教材、字幕、笔记或处理记录。
 
+当前准则：**2026-11-09**。先读[学习笔记整理准则](skills/study-knowledge-base/references/note-standard.md)，再选择下表的专项流程。它统一整体约束、按对象讲解、概念与推导衔接、公式选法、图文排版和分层验收。
+
+[本次变更](docs/updates/2026-11-09.md) · [多 AI 同步与生效核验](docs/multi-ai-sync.md) · [完整学习笔记入口](skills/complete-study-notes/SKILL.md)
+
 ## 从哪里开始
 
 | 任务 | 入口 |
 |---|---|
 | 学校课程：教材与笔记双向对应 | [学校课程工作流](docs/school-course-workflow.md) |
 | 单个 Clipping、课件或教材持续补一张卡 | [多来源增补方法](docs/incremental-source-completion.md) |
-| 课程有成套字幕和课件，按讲次重构知识卡 | [课程字幕主线重构](docs/school-course-workflow.md#课程专题有完整字幕和课件时按讲次重构知识卡) |
+| 课程有成套字幕和课件，按讲次重构知识卡 | [课程字幕主线重构](docs/school-course-workflow.md) |
 | 扫描教材：原页、正文、图和知识点 | [教材库流程](docs/textbook-library.md) · [Skill](skills/textbook-library/SKILL.md) |
 | 笔记、题目、字幕：来源与独立复核 | [知识库流程](docs/workflow.md) · [Skill](skills/study-knowledge-base/SKILL.md) |
 | 控制模型调用与返工 | [按页分流与费用记录](docs/low-cost-textbook-transcription.md) |
@@ -27,8 +31,8 @@
 ## 最小流程
 
 1. 固定原件、版本和可回查位置；教材页、课件页或视频时间片均可单独启动。
-2. 完成一张简洁概念卡：定义、条件与必要短例；来源贡献记后台；新来源只补实际新增的内容。
-3. 有教材对应小节时做教材卡与课程笔记双向链接；没有对应处就标明“无专节”。
+2. 完成一张可连续阅读的概念卡：讲清对象、机制、推导与条件；不强制短例或自测；新来源只补实际增量。
+3. 教材对应关系保存在后台；确有学习用途时保留双向链接，没有对应处不硬造专节。
 4. 分别做机械检查、原页核对、专业复算和客户端预览，留下尚未审定的范围。
 5. 通过一个小批次后再扩展；只重跑受影响的页面和文件。
 

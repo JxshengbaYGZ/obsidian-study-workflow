@@ -1,5 +1,7 @@
 # 从可回源笔记到可检验的掌握
 
+本文用于用户要求练习或检查掌握程度时，不要求每次笔记整理都布置测验，不新增自编题。笔记编写按[统一准则](../skills/study-knowledge-base/references/note-standard.md)。
+
 这是一条可选的学习闭环，适用于已有概念卡、原题和权威解答的知识库。它借鉴了 [DeepTutor](https://github.com/HKUDS/DeepTutor) 的来源定位、阅读与练习衔接、按主题检查掌握程度等设计；这里描述的是通用工作方法，不表示已安装或验证 DeepTutor。
 
 ## 一次练习怎样走完
