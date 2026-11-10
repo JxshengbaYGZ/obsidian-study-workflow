@@ -2,9 +2,9 @@
 
 把教材、课程笔记、视频字幕和练习整理成打开就能学的简洁 Obsidian 知识库。本仓库只提供通用流程、检查脚本和虚构小样；不收录任何人的教材、字幕、笔记或处理记录。
 
-当前准则：**2026-11-09**。先读[学习笔记整理准则](skills/study-knowledge-base/references/note-standard.md)，再选择下表的专项流程。它统一整体约束、按对象讲解、概念与推导衔接、公式选法、图文排版和分层验收。
+当前准则：**2026-11-10**。先读[学习笔记整理准则](skills/study-knowledge-base/references/note-standard.md)，再选择下表的专项流程。它统一整体约束、按对象讲解、概念与推导衔接、公式选法、图文排版和分层验收。
 
-[本次变更](docs/updates/2026-11-09.md) · [多 AI 同步与生效核验](docs/multi-ai-sync.md) · [完整学习笔记入口](skills/complete-study-notes/SKILL.md)
+[本次变更](docs/updates/2026-11-10.md) · [多 AI 同步与生效核验](docs/multi-ai-sync.md) · [完整学习笔记入口](skills/complete-study-notes/SKILL.md)
 
 ## 从哪里开始
 

@@ -1,6 +1,6 @@
 # 学习笔记整理工作流
 
-当前版本：2026-11-09。完整标准见[学习笔记整理准则](../skills/study-knowledge-base/references/note-standard.md)，AI 入口见[知识库整理](../skills/study-knowledge-base/SKILL.md)。统一准则维护内容与呈现要求，本页只给执行路线。
+当前版本：2026-11-10。完整标准见[学习笔记整理准则](../skills/study-knowledge-base/references/note-standard.md)，AI 入口见[知识库整理](../skills/study-knowledge-base/SKILL.md)。统一准则维护内容与呈现要求，本页只给执行路线。
 
 1. 核实实际库、任务类型、当前版本和约定范围，读取相关材料与已有有效样稿。
 2. 多文件修改先备份；列出知识点与图表去向，按对象与因果规划学习顺序。
@@ -11,4 +11,4 @@
 
 没有限定对象的知识库复核默认全库盘点；已有明确范围则按上下文执行，不能自行扩大或缩小。普通编辑不强制复杂批处理；需要冻结来源与版本审查时使用[批处理说明](../skills/study-knowledge-base/references/portable-workflow.md)。
 
-来源与编辑记录留在私有后台，正文直接讲知识，适用条件与具体疑点仍要说明。结构检查、内容审读和客户端显示不能互相代替。[变更说明](updates/2026-11-09.md) · [多 AI 同步](multi-ai-sync.md)
+来源与编辑记录留在私有后台，正文直接讲知识，适用条件与具体疑点仍要说明。结构检查、内容审读和客户端显示不能互相代替。[变更说明](updates/2026-11-10.md) · [多 AI 同步](multi-ai-sync.md)
